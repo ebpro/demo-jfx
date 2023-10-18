@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?><?import javafx.scene.layout.VBox?>
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.2-ea"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univtln.bruno.demos.demojfx.PersonController">
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Consultation">
+                    <graphic>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <ToolBar prefHeight="0.0" prefWidth="100.0">
+                                    <items>
+                                        <Button onAction="#updatePersonList" text="%refresh" />
+                                        <Button onAction="#removePerson" text="%delete" />
+                                    </items>
+                                </ToolBar>
+                                <TableView fx:id="personList">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="%id">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="75.0" text="%firstname">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="firstname" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="75.0" text="%name">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="name" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </graphic>
+                </Tab>
+                <Tab text="Ajout">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
